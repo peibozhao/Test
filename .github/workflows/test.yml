@@ -12,3 +12,7 @@ jobs:
       run: echo run first job $TEST_PATH
       env:
         TEST_PATH: test_path
+    - name: echo2
+      run: echo2 run first job $TEST_PATH
+      env:
+        TEST_PATH: test_path
