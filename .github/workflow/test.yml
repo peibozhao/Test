@@ -1,0 +1,14 @@
+name: test
+on:
+  push:
+    branches:
+      - master
+jobs:
+- first_job:
+    name: 'first job'
+    runs-on: ubuntu-latest
+    steps:
+    - name: echo
+      run: echo run first job $TEST_PATH
+      env:
+        TEST_PATH: test_path
