@@ -13,6 +13,27 @@ jobs:
       env:
         TEST_PATH: test_path
     - name: echo2
-      run: echo2 run first job $TEST_PATH
+      run: echo2 run second job $TEST_PATH
       env:
         TEST_PATH: test_path
+    - name: echo3
+      run: echo run third job $TEST_PATH
+      env:
+        TEST_PATH: test_path
+  second:
+    name: '2 job'
+    runs-on: ubuntu-latest
+    steps:
+    - name: echo
+      run: echo run first job $TEST_PATH
+      env:
+        TEST_PATH: test_path
+    - name: echo2
+      run: echo run second job $TEST_PATH
+      env:
+        TEST_PATH: test_path
+    - name: echo3
+      run: echo run third job $TEST_PATH
+      env:
+        TEST_PATH: test_path
+
