@@ -8,22 +8,14 @@ jobs:
     name: 'first job'
     runs-on: ubuntu-latest
     steps:
-    - name: echo
-      run: echo run first job $TEST_PATH
-      env:
-        TEST_PATH: test_path
+    - name: checkout
+      uses: checkout@master
     - name: pwd
       run: pwd
-      env:
-        TEST_PATH: test_path
     - name: ls
       run: ls
-      env:
-        TEST_PATH: test_path
     - name: cat
       run: cat test.cpp
-      env:
-        TEST_PATH: test_path
   second:
     name: '2 job'
     runs-on: ubuntu-latest
