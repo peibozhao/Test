@@ -12,12 +12,16 @@ jobs:
       run: echo run first job $TEST_PATH
       env:
         TEST_PATH: test_path
-    - name: echo2
-      run: echo2 run second job $TEST_PATH
+    - name: pwd
+      run: pwd
       env:
         TEST_PATH: test_path
-    - name: echo3
-      run: echo run third job $TEST_PATH
+    - name: ls
+      run: ls
+      env:
+        TEST_PATH: test_path
+    - name: cat
+      run: cat test.cpp
       env:
         TEST_PATH: test_path
   second:
