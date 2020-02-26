@@ -8,18 +8,18 @@ jobs:
     name: install docker
     runs-on: ubuntu-latest
     steps:
-    - name: apt update
+    - name: sudo apt update
       run: apt update
     - name: install
-      run: apt install apt-transport-https ca-certificates curl software-properties-common
+      run: sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
     - run: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
     - name: cat
-      run: add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+      run: sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
     - name: update
-      run: apt update
+      run: sudo apt update
     - name: prepare
-      run: apt-cache policy docker-ce
+      run: sudo apt-cache policy docker-ce
     - name: install
-      run: apt install docker-ce
+      run: sudo apt install -y docker-ce
     - name: status
-      run: systemctl status docker
+      run: sudo systemctl status docker
