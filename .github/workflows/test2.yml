@@ -8,8 +8,10 @@ jobs:
     name: install docker
     runs-on: ubuntu-latest
     steps:
-    - name: sudo apt update
-      run: apt update
+    - name: test
+      run: sudo apt install -y gcc
+    - name: update
+      run: sudo apt update
     - name: install
       run: sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
     - run: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
