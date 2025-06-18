@@ -12,6 +12,7 @@ jobs:
       - name: Compile C++ Code
         run: |
           g++ test.cpp -o mytest_exec
+          md5sum mytest_exec
 
       - name: Upload Compiled App
         uses: actions/upload-artifact@v4
@@ -33,7 +34,9 @@ jobs:
           path: .
 
       - name: Test run
-        run: ./mytest_exec
+        run: |
+          ./mytest_exec
+          md5sum mytest_exec
 
       # - name: Build Docker Image
       #   run: docker build -t myuser/cpp-app:${{ github.sha }} .
