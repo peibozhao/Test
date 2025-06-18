@@ -36,6 +36,7 @@ jobs:
       - name: Test run
         run: |
           md5sum mytest_exec
+          chmod +x mytest_exec
           ./mytest_exec
 
       # - name: Build Docker Image
