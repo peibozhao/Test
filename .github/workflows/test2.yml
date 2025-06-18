@@ -38,6 +38,7 @@ jobs:
           md5sum mytest_exec
           chmod +x mytest_exec
           ./mytest_exec
+          echo "hello ${{ github.actor }}"
 
       # - name: Build Docker Image
       #   run: docker build -t myuser/cpp-app:${{ github.sha }} .
