@@ -35,8 +35,8 @@ jobs:
 
       - name: Test run
         run: |
-          ./mytest_exec
           md5sum mytest_exec
+          ./mytest_exec
 
       # - name: Build Docker Image
       #   run: docker build -t myuser/cpp-app:${{ github.sha }} .
