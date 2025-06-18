@@ -35,7 +35,7 @@ jobs:
 
       - name: docker test
         id: docker_test
-        uses: docker/metadata-action
+        uses: docker/metadata-action@master
         with:
           images: abc/def
 
