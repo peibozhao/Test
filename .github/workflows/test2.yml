@@ -45,6 +45,7 @@ jobs:
           echo "hello ${{ github.actor }}"
           echo "hello ${{ steps.docker_test.outputs.tags }}"
           echo "hello ${{ steps.docker_test.outputs.labels }}"
+          echo "hello ${{ steps.docker_test.outputs.version }}"
 
 
       # - name: Build Docker Image
