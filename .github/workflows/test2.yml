@@ -36,6 +36,8 @@ jobs:
       - name: docker test
         id: docker_test
         uses: docker/metadata-action@master
+        with:
+          images: aaaaaaaaaaaaaaa
 
       - name: Test run
         run: |
