@@ -1,6 +1,8 @@
 name: Build and Dockerize C++ App
 
-on: [push]
+on:
+  push:
+    tags: [ 'v*.*.*' ]
 
 jobs:
   build:
@@ -19,6 +21,9 @@ jobs:
         with:
           name: compiled-app
           path: mytest_exec
+
+      - name: Create release
+        run: gh release create v1.0.0 mytest_exec --title "Release v1.0.0" --notes "Release notes for v1.0.0"
 
   dockerize:
     needs: build
