@@ -1,6 +1,7 @@
 name: Build and Dockerize C++ App
 
 on:
+  workflow_dispatch:
   push:
     tags: [ 'v*.*.*' ]
 
