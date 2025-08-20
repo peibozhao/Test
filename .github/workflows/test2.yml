@@ -6,27 +6,30 @@ on:
     tags: [ 'v*.*.*' ]
 
 jobs:
+  # build:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout Code
+  #       uses: actions/checkout@v4
+
+  #     - name: Compile C++ Code
+  #       run: |
+  #         g++ test.cpp -o mytest_exec
+  #         md5sum mytest_exec
+
+  #     - name: Upload Compiled App
+  #       uses: actions/upload-artifact@v4
+  #       with:
+  #         name: compiled-app
+  #         path: mytest_exec
+
+  #     - name: Create release
+  #       run: gh release create v1.0.0 mytest_exec --title "Release v1.0.0" --notes "Release notes for v1.0.0"
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  
   build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Compile C++ Code
-        run: |
-          g++ test.cpp -o mytest_exec
-          md5sum mytest_exec
-
-      - name: Upload Compiled App
-        uses: actions/upload-artifact@v4
-        with:
-          name: compiled-app
-          path: mytest_exec
-
-      - name: Create release
-        run: gh release create v1.0.0 mytest_exec --title "Release v1.0.0" --notes "Release notes for v1.0.0"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    uses: ./.github/workflows/test1.yaml
 
   dockerize:
     needs: build
