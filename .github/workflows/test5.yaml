@@ -1,0 +1,9 @@
+
+# .github/workflows/build.yml
+name: Build Project
+
+on:
+  workflow_call:
+  push:
+    branch: [ main, master ]
+
