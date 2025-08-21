@@ -2,14 +2,23 @@
 name: test7
 
 on:
-  workflow_dispatch:
   push:
-    branches: [ main, master ]
+    branches: [ * ]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "部署的环境"
+        required: true
+        default: "staging"
+      version:
+        description: "版本号"
+        required: false
 
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: test
-        run: echo hello
-
+      - name: 打印输入参数
+        run: |
+          echo "Environment: ${{ github.event.inputs.environment }}"
+          echo "Version: ${{ github.event.inputs.version }}"
