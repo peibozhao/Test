@@ -23,5 +23,7 @@ jobs:
     steps:
       - name: 打印输入参数
         run: |
-          echo "Environment: ${{ github.event.inputs.environment }}"
-          echo "Version: ${{ github.event.inputs.version }}"
+          echo "Environment: ${{ secrets.MY_TEST_SECRET }}"
+          echo "Version: ${MY_TEST_SECRET2}"
+          echo "Version: ${{ vars.MY_TEST_SECRET2 }}"
+
