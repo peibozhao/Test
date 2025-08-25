@@ -19,7 +19,6 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: testenv
-      url: http://101.42.48.206:80
     steps:
       - name: 打印输入参数
         run: |
