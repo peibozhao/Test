@@ -26,5 +26,5 @@ jobs:
 
       - name: Deploy to server
         run: |
-          ssh peibozhao@101.42.48.206 "cd /tmp/ && echo hello > test.txt"
+          ssh -o StrictHostKeyChecking=no peibozhao@101.42.48.206 "cd /tmp/ && echo hello > test.txt"
 
