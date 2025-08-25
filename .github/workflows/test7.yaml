@@ -24,5 +24,13 @@ jobs:
         run: |
           echo "Environment: ${{ secrets.MY_TEST_SECRET }}"
           echo "Version: ${MY_TEST_SECRET2}"
-          echo "Version: ${{ vars.MY_TEST_SECRET2 }}"
+      - name: 打印输入参数1
+        run: |
+          echo 1
+      - name: 打印输入参数2
+        run: |
+          echo 2
+      - name: 打印输入参数3
+        run: |
+          echo 3
 
