@@ -1,5 +1,5 @@
 
-name: test7
+name: Show infomation
 
 on:
   push:
@@ -10,7 +10,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup SSH
-        run: |
-          echo '${{ toJson(github) }}'
-
+     - name: Show github context
+       run: echo '${{ toJson(github) }}'
+     - name: Show memory
+       run: free -h
+     - name: Show lscpu
+       run: free -h
+     - name: Show timeout
+       run: sleep 100000000
