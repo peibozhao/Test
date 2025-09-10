@@ -1,5 +1,5 @@
 
-name: Show infomation
+# name: Show infomation
 
 on:
   push:
