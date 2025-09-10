@@ -16,5 +16,3 @@ jobs:
        run: free -h
      - name: Show cpu
        run: lscpu
-     - name: Show timeout
-       run: sleep 100000000
