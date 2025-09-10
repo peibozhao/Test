@@ -1,0 +1,40 @@
+name: Deploy
+on:
+  workflow_dispatch:
+  push:
+    branches: [ '*' ]
+permissions:
+  contents: write
+jobs:
+  build-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+      - name: Login to GitHub docker
+        uses: docker/login-action@v3.5.0
+        with:
+          username: ${{github.actor}}
+          password: ${{secrets.GITHUB_TOKEN}}
+          registry: ghcr.io
+      - name: Build docker image and push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: peibozhao/webtool
+
+
+      # - name: Cache backend build directory
+      #   uses: actions/cache@v4
+      #   with:
+      #     key: ${{ runner.os }}-backend-build
+      #     path: ./backend/build/
+      # - name: Build backend test
+      #   working-directory: ./backend/
+      #   run: |
+      #     cmake -S . -B build
+      #     cmake --build build
+
+
