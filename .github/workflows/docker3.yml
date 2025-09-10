@@ -18,13 +18,21 @@ jobs:
           username: ${{github.actor}}
           password: ${{secrets.GITHUB_TOKEN}}
           registry: ghcr.io
+      - name: Docker meta
+        id: docker_meta
+        uses: docker/metadata-action
+        with:
+          images: ${{github.repository}}
+      - name: Print docker meta
+        run: echo '${{ toJson(steps.docker_meta.outputs) }}'
       - name: Build docker image and push
         uses: docker/build-push-action@v5
         with:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ghcr.io/peibozhao/test
+          tags: ghcr.io/${{steps.docker_meta.outputs.tags}}
+          labels: ghcr.io/${{steps.docker_meta.outputs.labels}}
 
 
       # - name: Cache backend build directory
