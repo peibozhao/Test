@@ -1,4 +1,4 @@
-name: Deploy
+name: Docker
 on:
   workflow_dispatch:
   push:
@@ -23,7 +23,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: peibozhao/Test
+          tags: ghcr.io/peibozhao/Test
 
 
       # - name: Cache backend build directory
