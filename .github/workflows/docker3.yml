@@ -28,9 +28,6 @@ jobs:
       - name: Build docker image and push
         uses: docker/build-push-action@v5
         with:
-          context: .
-          file: ./Dockerfile
-          push: true
           tags: ghcr.io/${{steps.docker_meta.outputs.tags}}
           labels: ghcr.io/${{steps.docker_meta.outputs.labels}}
 
