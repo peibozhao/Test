@@ -23,7 +23,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: peibozhao/webtool
+          tags: peibozhao/Test
 
 
       # - name: Cache backend build directory
