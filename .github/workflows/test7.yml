@@ -12,6 +12,8 @@ jobs:
     steps:
      - name: Show github context
        run: echo '${{ toJson(github) }}'
+     - name: Show github env
+       run: echo ${GITHUB_ENV}
      - name: Show memory
        run: free -h
      - name: Show cpu
