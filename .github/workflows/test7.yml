@@ -22,7 +22,7 @@ jobs:
        run: echo "MY_VAR is $MY_VAR"
      - name: Set working directory
        run: echo "Running in a custom directory"
-       working-directory: ./my-directory
+       working-directory: /usr/
      - name: List files in the directory
        run: ls -al
-       working-directory: ./my-directory  # Same directory as before
+       working-directory: ./bin/
