@@ -21,8 +21,10 @@ jobs:
      - name: Use environment variable
        run: echo "MY_VAR is $MY_VAR"
      - name: Set working directory
-       run: echo "Running in a custom directory"
+       run: pwd
+     - name: Set working directory
+       run: pwd
        working-directory: /usr/
      - name: List files in the directory
-       run: ls -al
+       run: pwd
        working-directory: ./bin/
