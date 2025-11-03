@@ -16,3 +16,13 @@ jobs:
        run: free -h
      - name: Show cpu
        run: lscpu
+     - name: Set environment variable
+       run: echo "MY_VAR=some_value" >> $GITHUB_ENV
+     - name: Use environment variable
+       run: echo "MY_VAR is $MY_VAR"
+     - name: Set working directory
+       run: echo "Running in a custom directory"
+       working-directory: ./my-directory
+     - name: List files in the directory
+       run: ls -al
+       working-directory: ./my-directory  # Same directory as before
