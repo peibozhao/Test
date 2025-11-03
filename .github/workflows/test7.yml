@@ -14,6 +14,8 @@ jobs:
        run: echo '${{ toJson(github) }}'
      - name: Show github env
        run: echo ${GITHUB_ENV}
+     - name: Cat github env
+       run: cat ${GITHUB_ENV}
      - name: Show memory
        run: free -h
      - name: Show cpu
