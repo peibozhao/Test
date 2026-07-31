@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+    <remote
+        name="origin"
+        fetch="https://www.github.com/peibozhao/" />
+
+    <default
+        remote="origin"
+        revision="main" />
+
+    <project
+        name="Test"
+        path="app" />
+
+    <project
+        name="pycalc"
+        path="plugin" />
+
+</manifest>
